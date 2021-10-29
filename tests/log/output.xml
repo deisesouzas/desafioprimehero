@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211028 23:30:03.633" rpa="false" schemaversion="2">
+<suite id="s1" name="TestSitePratice" source="C:\Users\user\Documents\desafio_deise\desafioprimehero\tests\TestSitePratice.robot">
+<test id="s1-t1" name="Caso de Teste 01: Pesquisar Produto Existente">
+<kw name="Abrir navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211028 23:30:03.905" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20211028 23:30:03.905" endtime="20211028 23:30:05.664"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:03.904" endtime="20211028 23:30:05.664"/>
+</kw>
+<kw name="Acessar pagina home do site" library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211028 23:30:05.666" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20211028 23:30:05.665" endtime="20211028 23:30:11.131"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211028 23:30:11.137" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211028 23:30:11.131" endtime="20211028 23:30:11.137"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:05.665" endtime="20211028 23:30:11.137"/>
+</kw>
+<kw name="Digitar o nome do produto &quot;Blouse&quot; no campo de pesquisa" library="resource" sourcename="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=search_query</arg>
+<arg>${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:11.139" level="INFO">Typing text 'Blouse' into text field 'name=search_query'.</msg>
+<status status="PASS" starttime="20211028 23:30:11.139" endtime="20211028 23:30:11.253"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:11.138" endtime="20211028 23:30:11.253"/>
+</kw>
+<kw name="Clicar no botao pesquisar" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[@name="submit_search"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:11.258" level="INFO">Clicking element 'xpath=//button[@name="submit_search"]'.</msg>
+<status status="PASS" starttime="20211028 23:30:11.258" endtime="20211028 23:30:13.496"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:11.254" endtime="20211028 23:30:13.496"/>
+</kw>
+<kw name="Conferir se o produto &quot;Blouse&quot; foi listado no site" library="resource" sourcename="Conferir se o produto &quot;${PRODUTO}&quot; foi listado no site">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]//*[@src='http://automationpractice.com/img/p/7/7-home_default.jpg']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:13.499" endtime="20211028 23:30:13.534"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:13.497" endtime="20211028 23:30:13.534"/>
+</kw>
+<kw name="Fechar navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211028 23:30:13.536" endtime="20211028 23:30:15.772"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:13.535" endtime="20211028 23:30:15.772"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:03.904" endtime="20211028 23:30:15.772"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Pesquisar Produto não Existente">
+<kw name="Abrir navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211028 23:30:15.775" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20211028 23:30:15.775" endtime="20211028 23:30:17.893"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:15.775" endtime="20211028 23:30:17.893"/>
+</kw>
+<kw name="Acessar pagina home do site" library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211028 23:30:17.896" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20211028 23:30:17.895" endtime="20211028 23:30:23.895"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211028 23:30:23.901" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211028 23:30:23.896" endtime="20211028 23:30:23.901"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:17.894" endtime="20211028 23:30:23.901"/>
+</kw>
+<kw name="Digitar o nome do produto &quot;ItemNaoExistente&quot; no campo de pesquisa" library="resource" sourcename="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=search_query</arg>
+<arg>${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:23.903" level="INFO">Typing text 'ItemNaoExistente' into text field 'name=search_query'.</msg>
+<status status="PASS" starttime="20211028 23:30:23.903" endtime="20211028 23:30:24.031"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:23.902" endtime="20211028 23:30:24.031"/>
+</kw>
+<kw name="Clicar no botao pesquisar" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[@name="submit_search"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:24.034" level="INFO">Clicking element 'xpath=//button[@name="submit_search"]'.</msg>
+<status status="PASS" starttime="20211028 23:30:24.033" endtime="20211028 23:30:26.458"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:24.032" endtime="20211028 23:30:26.458"/>
+</kw>
+<kw name="Conferir mensagem de erro &quot;No results were found for your search &quot;ItemNaoExistente&quot;&quot;" library="resource" sourcename="Conferir mensagem de erro &quot;${MSG_ERROR}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//p[@class='alert alert-warning']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:26.459" endtime="20211028 23:30:26.492"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//p[@class='alert alert-warning']</arg>
+<arg>${MSG_ERROR}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211028 23:30:26.493" level="INFO">Verifying element 'xpath=//p[@class='alert alert-warning']' contains exact text 'No results were found for your search "ItemNaoExistente"'.</msg>
+<status status="PASS" starttime="20211028 23:30:26.493" endtime="20211028 23:30:26.511"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:26.459" endtime="20211028 23:30:26.512"/>
+</kw>
+<kw name="Fechar navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211028 23:30:26.513" endtime="20211028 23:30:28.752"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:26.512" endtime="20211028 23:30:28.752"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:15.774" endtime="20211028 23:30:28.752"/>
+</test>
+<test id="s1-t3" name="Caso de Teste 03: Listar Produtos">
+<kw name="Abrir navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211028 23:30:28.756" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20211028 23:30:28.755" endtime="20211028 23:30:30.858"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:28.754" endtime="20211028 23:30:30.858"/>
+</kw>
+<kw name="Acessar pagina home do site" library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211028 23:30:30.860" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20211028 23:30:30.860" endtime="20211028 23:30:36.977"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211028 23:30:36.983" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211028 23:30:36.977" endtime="20211028 23:30:36.983"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:30.859" endtime="20211028 23:30:36.983"/>
+</kw>
+<kw name="Passar o mouse por cima da categoria &quot;Women&quot; no menu principal superior de categorias" library="resource" sourcename="Passar o mouse por cima da categoria &quot;${CATEGORIA}&quot; no menu principal superior de categorias">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@title='${CATEGORIA}']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:36.985" endtime="20211028 23:30:37.018"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=//a[@title='${CATEGORIA}']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211028 23:30:37.019" level="INFO">Simulating Mouse Over on element 'xpath=//a[@title='Women']'.</msg>
+<status status="PASS" starttime="20211028 23:30:37.019" endtime="20211028 23:30:37.331"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:36.984" endtime="20211028 23:30:37.332"/>
+</kw>
+<kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="resource" sourcename="Clicar na sub categoria &quot;${SUBCAT}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]//a[@title="${SUBCAT}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:37.336" endtime="20211028 23:30:37.378"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]//a[@title="${SUBCAT}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:37.379" level="INFO">Clicking element 'xpath=//*[@id="block_top_menu"]//a[@title="Summer Dresses"]'.</msg>
+<status status="PASS" starttime="20211028 23:30:37.378" endtime="20211028 23:30:39.318"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:37.334" endtime="20211028 23:30:39.319"/>
+</kw>
+<kw name="Conferir se os produtos da sub categoria &quot;Summer Dresses&quot; foram mostrados na pagina" library="resource" sourcename="Conferir se os produtos da sub categoria &quot;${SUBCAT}&quot; foram mostrados na pagina">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//span[@class="cat-name"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:39.321" endtime="20211028 23:30:39.974"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:39.320" endtime="20211028 23:30:39.974"/>
+</kw>
+<kw name="Fechar navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211028 23:30:39.977" endtime="20211028 23:30:42.229"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:39.976" endtime="20211028 23:30:42.229"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:28.754" endtime="20211028 23:30:42.230"/>
+</test>
+<test id="s1-t4" name="Caso de Teste 04: Adicionar Cliente">
+<kw name="Abrir navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211028 23:30:42.233" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20211028 23:30:42.232" endtime="20211028 23:30:44.367"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:42.232" endtime="20211028 23:30:44.367"/>
+</kw>
+<kw name="Acessar pagina home do site" library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationpractice.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211028 23:30:44.369" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20211028 23:30:44.369" endtime="20211028 23:30:50.222"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211028 23:30:50.228" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211028 23:30:50.222" endtime="20211028 23:30:50.228"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:44.368" endtime="20211028 23:30:50.229"/>
+</kw>
+<kw name="Clicar em &quot;Sign in&quot;" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]//*[@class="login"][contains(text(),"Sign in")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:50.230" level="INFO">Clicking element 'xpath=//*[@id="header"]//*[@class="login"][contains(text(),"Sign in")]'.</msg>
+<status status="PASS" starttime="20211028 23:30:50.230" endtime="20211028 23:30:52.409"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:50.229" endtime="20211028 23:30:52.409"/>
+</kw>
+<kw name="Informar um e-mail válido" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=email_create</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:52.413" endtime="20211028 23:30:52.456"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${EMAIL}</var>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20211028 23:30:52.457" level="INFO">${EMAIL} = vr5YNaC8</msg>
+<status status="PASS" starttime="20211028 23:30:52.456" endtime="20211028 23:30:52.457"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email_create</arg>
+<arg>${EMAIL}@testerobot.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:52.457" level="INFO">Typing text 'vr5YNaC8@testerobot.com' into text field 'id=email_create'.</msg>
+<status status="PASS" starttime="20211028 23:30:52.457" endtime="20211028 23:30:52.597"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:52.410" endtime="20211028 23:30:52.598"/>
+</kw>
+<kw name="Clicar em &quot;Create an account&quot;" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=SubmitCreate</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:52.600" level="INFO">Clicking button 'id=SubmitCreate'.</msg>
+<status status="PASS" starttime="20211028 23:30:52.600" endtime="20211028 23:30:52.705"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:52.599" endtime="20211028 23:30:52.705"/>
+</kw>
+<kw name="Preencher os dados obrigatórios" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="account-creation_form"]//h3[contains(text(),"Your personal information")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:52.707" endtime="20211028 23:30:54.063"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=id_gender2</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:54.066" level="INFO">Clicking element 'id=id_gender2'.</msg>
+<status status="PASS" starttime="20211028 23:30:54.064" endtime="20211028 23:30:54.142"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=customer_firstname</arg>
+<arg>${PESSOA.nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:54.144" level="INFO">Typing text 'Robot' into text field 'id=customer_firstname'.</msg>
+<status status="PASS" starttime="20211028 23:30:54.142" endtime="20211028 23:30:54.304"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=customer_lastname</arg>
+<arg>${PESSOA.sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:54.306" level="INFO">Typing text 'Framework' into text field 'id=customer_lastname'.</msg>
+<status status="PASS" starttime="20211028 23:30:54.305" endtime="20211028 23:30:54.470"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=passwd</arg>
+<arg>${PESSOA.pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:54.472" level="INFO">Typing text '123456' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20211028 23:30:54.471" endtime="20211028 23:30:54.727"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=address1</arg>
+<arg>${PESSOA.endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:54.729" level="INFO">Typing text 'Rua QA, Bairro Robot' into text field 'id=address1'.</msg>
+<status status="PASS" starttime="20211028 23:30:54.727" endtime="20211028 23:30:55.010"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=city</arg>
+<arg>${PESSOA.cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:55.013" level="INFO">Typing text 'Lauro de Freitas' into text field 'id=city'.</msg>
+<status status="PASS" starttime="20211028 23:30:55.011" endtime="20211028 23:30:55.314"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>id=id_state</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211028 23:30:55.315" endtime="20211028 23:30:55.359"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>id=id_state</arg>
+<arg>${PESSOA.id_estado}</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20211028 23:30:55.362" level="INFO">Selecting options from selection list 'id=id_state' by index 9.</msg>
+<status status="PASS" starttime="20211028 23:30:55.360" endtime="20211028 23:30:55.597"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=postcode</arg>
+<arg>${PESSOA.cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:55.599" level="INFO">Typing text '12345' into text field 'id=postcode'.</msg>
+<status status="PASS" starttime="20211028 23:30:55.597" endtime="20211028 23:30:55.761"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=phone_mobile</arg>
+<arg>${PESSOA.telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:55.763" level="INFO">Typing text '99999999' into text field 'id=phone_mobile'.</msg>
+<status status="PASS" starttime="20211028 23:30:55.761" endtime="20211028 23:30:55.923"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:52.706" endtime="20211028 23:30:55.923"/>
+</kw>
+<kw name="Submeter cadastro" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>submitAccount</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211028 23:30:55.926" level="INFO">Clicking button 'submitAccount'.</msg>
+<status status="PASS" starttime="20211028 23:30:55.925" endtime="20211028 23:30:58.081"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:55.924" endtime="20211028 23:30:58.081"/>
+</kw>
+<kw name="Conferir se o cadastro foi efetuado com sucesso" library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/p</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 23:30:58.083" endtime="20211028 23:30:58.132"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//*[@id="center_column"]/p</arg>
+<arg>Welcome to your account. Here you can manage all of your personal information and orders.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211028 23:30:58.133" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p' contains exact text 'Welcome to your account. Here you can manage all of your personal information and orders.'.</msg>
+<status status="PASS" starttime="20211028 23:30:58.133" endtime="20211028 23:30:58.162"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//*[@id="header"]/div[2]//div[1]/a/span</arg>
+<arg>${PESSOA.nome} ${PESSOA.sobrenome}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211028 23:30:58.165" level="INFO">Verifying element 'xpath=//*[@id="header"]/div[2]//div[1]/a/span' contains exact text 'Robot Framework'.</msg>
+<status status="PASS" starttime="20211028 23:30:58.163" endtime="20211028 23:30:58.199"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:58.082" endtime="20211028 23:30:58.200"/>
+</kw>
+<kw name="Fechar navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211028 23:30:58.201" endtime="20211028 23:31:00.518"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:58.200" endtime="20211028 23:31:00.519"/>
+</kw>
+<status status="PASS" starttime="20211028 23:30:42.231" endtime="20211028 23:31:00.519"/>
+</test>
+<status status="PASS" starttime="20211028 23:30:03.635" endtime="20211028 23:31:00.521"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="TestSitePratice">TestSitePratice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
